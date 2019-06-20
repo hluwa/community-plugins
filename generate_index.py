@@ -8,6 +8,7 @@ import requests
 from dateutil import parser
 import base64
 import re
+from datetime import datetime
 
 ghUrl = "https://github.com/"
 user = None
@@ -195,7 +196,7 @@ def main():
                     plugin=plugin["name"],
                     author=plugin["author"],
                     authorUrl=plugin["authorUrl"],
-                    lastUpdated=plugin["lastUpdated"],
+                    lastUpdated=datetime.fromtimestamp(plugin["lastUpdated"]).date(),
                     license=plugin['license']['name'],
                     plugintype=', '.join(sorted(plugin['type'])),
                     description=plugin['description']))
