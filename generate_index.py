@@ -190,7 +190,7 @@ def main():
             readme.write(u"|------------|--------|--------------|---------|----------|-------------|\n")
 
             for plugin in allPlugins.values():
-                readme.write(u"|[{name}]({projectUrl})|[{author}]({authorUrl})|{lastUpdated}|[{license}]({plugin}/LICENSE)|{plugintype}|{description}|\n".format(name = plugin['name'],
+                readme.write(u"|[{name}]({projectUrl})|[{author}]({authorUrl})|{lastUpdated}|{license}|{plugintype}|{description}|\n".format(name = plugin['name'],
                     projectUrl=plugin["projectUrl"],
                     plugin=plugin["name"],
                     author=plugin["author"],
