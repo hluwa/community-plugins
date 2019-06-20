@@ -35,14 +35,14 @@ def getPluginJson(plugin):
     site = "https://github.com/"
     apisite = "https://api.github.com/repos/"
     jsonUrl = "{}{}/contents/plugin.json?ref={}"
-    tagsUrl = "https://api.github.com/repos/{}/tags".format(plugin["name"])
-
     userAndProject = plugin["name"]
     userName = plugin["name"].split("/")[0]
+    releasesUrl = "{}{}/releases/tags".format(apisite, userAndProject)
+    tagsUrl = "{}{}/tags".format(apisite, userAndProject)
 
     releaseData = None
     try:
-        releases = "{}{}/releases/tags/{}".format(apisite, userAndProject, plugin["tag"])
+        releases = "{}/{}".format(releasesUrl, plugin["tag"])
         releaseData = getfile(releases).json()
         if "message" in releaseData and releaseData["message"] == "Not Found":
             print("\n\nERROR: {}, Couldn't get release information. Likely the user created a tag but no associated release.\n".format(plugin['name']))
@@ -79,7 +79,10 @@ def getPluginJson(plugin):
     try:
         jsonDataUrl = jsonUrl.format(apisite, userAndProject, plugin["tag"])
         content = getfile(jsonDataUrl).json()['content']
-        data = json.loads(base64.b64decode(content))["plugin"]
+        data = json.loads(base64.b64decode(content))
+        if "plugin" in data:
+            # Using old style json
+            data = data["plugin"]
     except requests.exceptions.HTTPError:
         print(" Unable get get url")
         return None
