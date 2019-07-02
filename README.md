@@ -1,6 +1,14 @@
 # Binary Ninja Community Plugins
 
-Plugins in this repository are provided by the community. Vector 35 LLC makes no guarantees to the quality, safety or efficacy of the plugins herein.
+Plugins in this repository are provided by the community. Vector 35, Inc. makes no guarantees to the quality, safety or efficacy of the plugins herein.
+
+## Official Plugins
+
+This repository tracks third-party plugins, but many official plugins are provided by Vector 35 that offer additional functionality:
+
+ - [Example Plugins](https://github.com/Vector35/binaryninja-api/tree/dev/python/examples) are included with all installs of Binary Ninja and can [be installed](https://github.com/Vector35/binaryninja-api/tree/dev/python/examples#loading-plugins) from there
+ - [Official Samples](https://github.com/Vector35/official-plugins) a fully formed repository of official plugins
+ - [Sample Plugin](https://github.com/Vector35/sample_plugin) if you're looking for a template to build a new plugin from
 
 ## Installing Plugins
 
@@ -41,7 +49,7 @@ To be displayed in the plugin loader, your `plugin.json` MUST have the following
 
 ## License
 
-Note that content contained in the root of this repository itself is Copyright 2016, Vector 35 LLC and [available](LICENSE) under an MIT license, but each individual plugin may be released under a different license.
+Note that content contained in the root of this repository itself is Copyright 2016, Vector 35, Inc. and [available](LICENSE) under an MIT license, but each individual plugin may be released under a different license.
 
 # Binary Ninja Plugins
 
