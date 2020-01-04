@@ -890,10 +890,7 @@
         "version": "0.1"
     }, 
     {
-        "api": [
-            "python2", 
-            "python3"
-        ], 
+        "api": "python2", 
         "author": "jofra (@V_jofra)", 
         "description": "A plugin that eases fixing jump table branches.", 
         "license": {
